@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Homet</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./quizzes.html">Quizzes</a></li>
+        </ul>
+    </nav>
+    <h1>What DnD 5E Class Are You?</h1>
+    <form id="dndClassQuiz">
+        <!-- Question 1 -->
+        <div class="row">
+            <label for="q1">What's your preferred approach in a tough situation?</label><br>
+            <input type="radio" name="q1" value="fighter" id="q1-fighter"> Charge in and fight head-on<br>
+            <input type="radio" name="q1" value="wizard" id="q1-wizard"> Use strategy and magic<br>
+            <input type="radio" name="q1" value="rogue" id="q1-rogue"> Sneak and strike from the shadows<br>
+            <input type="radio" name="q1" value="cleric" id="q1-cleric"> Protect and heal my allies<br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="row">
+            <label for="q2">What kind of weapon do you prefer?</label><br>
+            <input type="radio" name="q2" value="fighter" id="q2-fighter"> A big sword or axe<br>
+            <input type="radio" name="q2" value="wizard" id="q2-wizard"> A staff or wand<br>
+            <input type="radio" name="q2" value="rogue" id="q2-rogue"> Daggers or a bow<br>
+            <input type="radio" name="q2" value="cleric" id="q2-cleric"> A mace or holy symbol<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="row">
+            <label for="q3">What role do you prefer in a group?</label><br>
+            <input type="radio" name="q3" value="fighter" id="q3-fighter"> The frontline fighter<br>
+            <input type="radio" name="q3" value="wizard" id="q3-wizard"> The thinker and planner<br>
+            <input type="radio" name="q3" value="rogue" id="q3-rogue"> The one who stays hidden and strikes<br>
+            <input type="radio" name="q3" value="cleric" id="q3-cleric"> The healer and protector<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="row">
+            <label for="q4">Which environment would you rather adventure in?</label><br>
+            <input type="radio" name="q4" value="fighter" id="q4-fighter"> A battlefield<br>
+            <input type="radio" name="q4" value="wizard" id="q4-wizard"> A mystical library or ancient ruin<br>
+            <input type="radio" name="q4" value="rogue" id="q4-rogue"> A shadowy city or thieves' den<br>
+            <input type="radio" name="q4" value="cleric" id="q4-cleric"> A sacred temple or healing ground<br>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" onclick="calculateDnDClass()">Submit</button>
+    </form>
+
+    <!-- Placeholder for the result -->
+    <div id="result"></div>
+
+    <!-- Linking the JS file -->
+    <script src="dndClassQuiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Homet</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./quizzes.html">Quizzes</a></li>
+        </ul>
+    </nav>
+    <h1>What Type of Music Listener Are You?</h1>
+    <form id="musicQuiz">
+        <!-- Question 1 -->
+        <div class="row">
+            <label for="q1">What kind of music do you listen to the most?</label><br>
+            <input type="radio" name="q1" value="pop" id="q1-pop"> Pop<br>
+            <input type="radio" name="q1" value="rock" id="q1-rock"> Rock<br>
+            <input type="radio" name="q1" value="jazz" id="q1-jazz"> Jazz<br>
+            <input type="radio" name="q1" value="classical" id="q1-classical"> Classical<br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="row">
+            <label for="q2">Which of these artists do you prefer?</label><br>
+            <input type="radio" name="q2" value="pop" id="q2-pop"> Taylor Swift<br>
+            <input type="radio" name="q2" value="rock" id="q2-rock"> Foo Fighters<br>
+            <input type="radio" name="q2" value="jazz" id="q2-jazz"> Miles Davis<br>
+            <input type="radio" name="q2" value="classical" id="q2-classical"> Beethoven<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="row">
+            <label for="q3">What do you usually listen to while working or studying?</label><br>
+            <input type="radio" name="q3" value="pop" id="q3-pop"> Top 40 Hits<br>
+            <input type="radio" name="q3" value="rock" id="q3-rock"> Classic Rock<br>
+            <input type="radio" name="q3" value="jazz" id="q3-jazz"> Smooth Jazz<br>
+            <input type="radio" name="q3" value="classical" id="q3-classical"> Instrumental Classical<br>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" onclick="calculateResult()">Submit</button>
+    </form>
+
+    <!-- Placeholder for the result -->
+    <div id="result"></div>
+
+    <!-- Linking the JS file -->
+    <script src="quiz.js"></script>
+</body>
+</html>
