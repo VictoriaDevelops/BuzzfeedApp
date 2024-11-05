@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Class Quiz Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f0e6d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://www.dndbeyond.com/public/images/backgrounds/bg.jpg'); /* D&D themed background */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 2px solid #7c1b1b; /* D&D red accent */
+        }
+        /* Header */
+        .header {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+        .subheader {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #f0e6d6;
+            margin: 1rem 0;
+        }
+        /* Quiz Cards */
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .quiz-card {
+            background: #2e2e2e;
+            border: 2px solid #7c1b1b;
+            color: #ffcc00;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            font-family: 'Cinzel', serif;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffcc00;
+        }
+        .quiz-card:hover {
+            background: #5b2b2b;
+            transform: scale(1.02);
+            box-shadow: 0 0 8px #ffcc00;
+        }
+        /* Quiz Card Headings */
+        .quiz-title {
+            font-size: 1.4rem;
+            font-family: 'Cinzel', serif;
+            color: #ffcc00;
+        }
+        .quiz-description {
+            font-size: 1rem;
+            color: #f0e6d6;
+        }
+        /* Footer CTA */
+        .cta {
+            background: #7c1b1b;
+            color: #ffcc00;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+        .cta:hover {
+            background: #ffcc00;
+            color: #7c1b1b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">D&D Class Quiz Hub</div>
+    <div class="subheader">Select a quiz to find the perfect class for your adventure level!</div>
+
+    <!-- Quiz Options -->
+    <div class="quiz-options">
+        <!-- Beginner Quiz -->
+        <a href="./dnd5e-class-quizz-beginner.html" class="quiz-card" id="beginner-quiz">
+            <div class="quiz-title">Beginner Classes</div>
+            <div class="quiz-description">Perfect for newcomers to D&D. Find a class that’s easy to learn and fun for first-time players.</div>
+        </a>
+
+        <!-- Novice Quiz -->
+        <a href="./dnd5e-class-quizz-intermediate.html" class="quiz-card" id="novice-quiz">
+            <div class="quiz-title">Novice Classes</div>
+            <div class="quiz-description">For players with some experience. Discover classes that offer a balance of complexity and excitement.</div>
+        </a>
+
+        <!-- Expert Quiz -->
+        <a href="./dnd5e-class-quizz-expert.html" class="quiz-card" id="expert-quiz">
+            <div class="quiz-title">Expert Classes</div>
+            <div class="quiz-description">Designed for seasoned adventurers. Choose from classes that require strategy and skill mastery.</div>
+        </a>
+    </div>
+</div>
+
+<script>
+    // Event listeners for each quiz link
+    document.getElementById('beginner-quiz').addEventListener('click', () => {
+        window.location.href = 'beginner-quiz.html';
+    });
+    document.getElementById('novice-quiz').addEventListener('click', () => {
+        window.location.href = 'novice-quiz.html';
+    });
+    document.getElementById('expert-quiz').addEventListener('click', () => {
+        window.location.href = 'expert-quiz.html';
+    });
+</script>
+
+</body>
+</html>
