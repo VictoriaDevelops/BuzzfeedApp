@@ -3,51 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Homet</title>
+    <title>Fun Quiz</title>
+    <style>
+       
+        body {
+            background-color: #E6E6FA; /* Light purple */
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        /* Navigation styling */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4B0082;
+            font-weight: bold;
+        }
+
+        /* Disco ball styling */
+        .disco-ball {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at center, #fff 10%, #ccc 20%, #eee 40%);
+            border-radius: 50%;
+            position: fixed;
+            top: 10%;
+            animation: spin 3s linear infinite;
+            box-shadow: 
+                0 0 8px rgba(255, 255, 255, 0.8),
+                0 0 12px rgba(255, 255, 255, 0.6),
+                0 0 16px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Quiz container styling */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.4), 0 0 25px rgba(0, 0, 255, 0.3);
+            max-width: 600px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style for quiz questions and options */
+        .row {
+            margin-bottom: 15px;
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #4B0082; /* Dark purple */
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Submit button styling */
+        button {
+            background-color: #4B0082; /* Dark purple */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6A0DAD; /* Slightly lighter purple */
+        }
+
+        /* Result container styling */
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4B0082; /* Dark purple */
+        }
+    </style>
 </head>
 <body>
+    <!-- Disco ball effect -->
+    <div class="disco-ball"></div>
+
+    <!-- Navigation bar -->
     <nav>
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./quizzes.html">Quizzes</a></li>
         </ul>
     </nav>
+
+    <!-- Quiz content -->
     <h1>What Type of Music Listener Are You?</h1>
-    <form id="musicQuiz">
-        <!-- Question 1 -->
-        <div class="row">
-            <label for="q1">What kind of music do you listen to the most?</label><br>
-            <input type="radio" name="q1" value="pop" id="q1-pop"> Pop<br>
-            <input type="radio" name="q1" value="rock" id="q1-rock"> Rock<br>
-            <input type="radio" name="q1" value="jazz" id="q1-jazz"> Jazz<br>
-            <input type="radio" name="q1" value="classical" id="q1-classical"> Classical<br>
-        </div>
+    <div class="quiz-container">
+        <form id="musicQuiz">
+            <!-- Question 1 -->
+            <div class="row">
+                <label for="q1">What kind of music do you listen to the most?</label><br>
+                <input type="radio" name="q1" value="pop" id="q1-pop"> Pop<br>
+                <input type="radio" name="q1" value="rock" id="q1-rock"> Rock<br>
+                <input type="radio" name="q1" value="jazz" id="q1-jazz"> Jazz<br>
+                <input type="radio" name="q1" value="classical" id="q1-classical"> Classical<br>
+            </div>
 
-        <!-- Question 2 -->
-        <div class="row">
-            <label for="q2">Which of these artists do you prefer?</label><br>
-            <input type="radio" name="q2" value="pop" id="q2-pop"> Taylor Swift<br>
-            <input type="radio" name="q2" value="rock" id="q2-rock"> Foo Fighters<br>
-            <input type="radio" name="q2" value="jazz" id="q2-jazz"> Miles Davis<br>
-            <input type="radio" name="q2" value="classical" id="q2-classical"> Beethoven<br>
-        </div>
+            <!-- Question 2 -->
+            <div class="row">
+                <label for="q2">Which of these artists do you prefer?</label><br>
+                <input type="radio" name="q2" value="pop" id="q2-pop"> Taylor Swift<br>
+                <input type="radio" name="q2" value="rock" id="q2-rock"> Foo Fighters<br>
+                <input type="radio" name="q2" value="jazz" id="q2-jazz"> Miles Davis<br>
+                <input type="radio" name="q2" value="classical" id="q2-classical"> Beethoven<br>
+            </div>
 
-        <!-- Question 3 -->
-        <div class="row">
-            <label for="q3">What do you usually listen to while working or studying?</label><br>
-            <input type="radio" name="q3" value="pop" id="q3-pop"> Top 40 Hits<br>
-            <input type="radio" name="q3" value="rock" id="q3-rock"> Classic Rock<br>
-            <input type="radio" name="q3" value="jazz" id="q3-jazz"> Smooth Jazz<br>
-            <input type="radio" name="q3" value="classical" id="q3-classical"> Instrumental Classical<br>
-        </div>
+            <!-- Question 3 -->
+            <div class="row">
+                <label for="q3">What do you usually listen to while working or studying?</label><br>
+                <input type="radio" name="q3" value="pop" id="q3-pop"> Top 40 Hits<br>
+                <input type="radio" name="q3" value="rock" id="q3-rock"> Classic Rock<br>
+                <input type="radio" name="q3" value="jazz" id="q3-jazz"> Smooth Jazz<br>
+                <input type="radio" name="q3" value="classical" id="q3-classical"> Instrumental Classical<br>
+            </div>
 
-        <!-- Submit button -->
-        <button type="button" onclick="calculateResult()">Submit</button>
-    </form>
+            <!-- Submit button -->
+            <button type="button" onclick="calculateResult()">Submit</button>
+        </form>
 
-    <!-- Placeholder for the result -->
-    <div id="result"></div>
+        <!-- Placeholder for the result -->
+        <div id="result"></div>
+    </div>
 
     <!-- Linking the JS file -->
     <script src="quiz.js"></script>
