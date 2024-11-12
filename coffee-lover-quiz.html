@@ -1,0 +1,64 @@
+<html></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Quiz</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./quizzel.html">Quizzes</a></li>
+        </ul>
+    </nav>
+    <h1>Which Cafe Should You Visit?</h1>
+    <form id="cafeQuiz">
+        
+        <!-- Question 1 -->
+        <div class="row">
+            <label for="q1">What's your go-to coffee type?</label><br>
+            <input type="radio" name="q1" value="betterBuzz-keepCoffee" id="q1-1"> Espresso<br>
+            <input type="radio" name="q1" value="meetFresh-lovesong" id="q1-2"> Latte<br>
+            <input type="radio" name="q1" value="betterBuzz-meetFresh" id="q1-3"> Cold Brew<br>
+            <input type="radio" name="q1" value="keepCoffee-lovesong" id="q1-4"> Drip Coffee<br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="row">
+            <label for="q2">What flavor profile do you prefer?</label><br>
+            <input type="radio" name="q2" value="betterBuzz-lovesong" id="q2-1"> Bold and robust<br>
+            <input type="radio" name="q2" value="keepCoffee-meetFresh" id="q2-2"> Sweet and creamy<br>
+            <input type="radio" name="q2" value="betterBuzz-keepCoffee" id="q2-3"> Light and nutty<br>
+            <input type="radio" name="q2" value="meetFresh-lovesong" id="q2-4"> Herbal and aromatic<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="row">
+            <label for="q3">Why do you usually visit cafes?</label><br>
+            <input type="radio" name="q3" value="betterBuzz-meetFresh" id="q3-1"> To study or work<br>
+            <input type="radio" name="q3" value="keepCoffee-lovesong" id="q3-2"> To catch up with friends<br>
+            <input type="radio" name="q3" value="betterBuzz-lovesong" id="q3-3"> To relax alone<br>
+            <input type="radio" name="q3" value="keepCoffee-meetFresh" id="q3-4"> To people-watch<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="row">
+            <label for="q4">Are you a snacker while having coffee?</label><br>
+            <input type="radio" name="q4" value="keepCoffee-betterBuzz" id="q4-1"> Yes, I love a good pastry<br>
+            <input type="radio" name="q4" value="meetFresh-lovesong" id="q4-2"> No, just coffee please<br>
+            <input type="radio" name="q4" value="betterBuzz-meetFresh" id="q4-3"> Sometimes, depending on my mood<br>
+            <input type="radio" name="q4" value="keepCoffee-lovesong" id="q4-4"> Only if there are unique options<br>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" onclick="calculateCafeResult()">Submit</button>
+    </form>
+
+    <!-- Placeholder for the result -->
+    <div id="result"></div>
+
+    <!-- Linking the JS file -->
+    <script src="coffeeQuiz.js"></script>
+</body>
+</html>
