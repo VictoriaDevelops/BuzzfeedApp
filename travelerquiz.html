@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Should You Travel? Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        #result {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Where Should You Travel?</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What kind of weather do you prefer?</p>
+            <ul class="options">
+                <li><input type="radio" name="weather" value="tropical"> Tropical & Beachy</li>
+                <li><input type="radio" name="weather" value="cold"> Cold & Snowy</li>
+                <li><input type="radio" name="weather" value="mild"> Mild & Pleasant</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>2. What type of activities do you enjoy?</p>
+            <ul class="options">
+                <li><input type="radio" name="activity" value="adventure"> Adventure & Sports</li>
+                <li><input type="radio" name="activity" value="culture"> Cultural & Historic</li>
+                <li><input type="radio" name="activity" value="relaxation"> Relaxation & Spa</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>3. What’s your preferred environment?</p>
+            <ul class="options">
+                <li><input type="radio" name="environment" value="city"> Urban & City</li>
+                <li><input type="radio" name="environment" value="nature"> Nature & Wildlife</li>
+                <li><input type="radio" name="environment" value="coast"> Coast & Beach</li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="calculateResult()">Find My Destination</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateResult() {
+        const weather = document.querySelector('input[name="weather"]:checked');
+        const activity = document.querySelector('input[name="activity"]:checked');
+        const environment = document.querySelector('input[name="environment"]:checked');
+
+        if (!weather || !activity || !environment) {
+            alert("Please answer all questions.");
+            return;
+        }
+
+        let destination = "";
+        
+        if (weather.value === "tropical" && activity.value === "relaxation" && environment.value === "coast") {
+            destination = "Hawaii 🌺";
+        } else if (weather.value === "cold" && activity.value === "adventure" && environment.value === "nature") {
+            destination = "Switzerland 🏔️";
+        } else if (weather.value === "mild" && activity.value === "culture" && environment.value === "city") {
+            destination = "Paris 🗼";
+        } else if (weather.value === "mild" && activity.value === "relaxation" && environment.value === "coast") {
+            destination = "Amalfi Coast, Italy 🌊";
+        } else {
+            destination = "Japan 🇯🇵";
+        }
+
+        document.getElementById("result").innerText = `Your ideal travel destination is: ${destination}`;
+    }
+</script>
+
+</body>
+</html>
