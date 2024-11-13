@@ -1,0 +1,103 @@
+*
+ {
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 14px;
+ }
+
+ body
+ {
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     width: 100%;
+     nav
+     {
+         align-items: center;
+         background-color: crimson;
+
+         display: flex;
+         flex-direction: row-reverse;
+         height: 60px;
+         width: 100%;
+         ul
+         {
+             align-items: center;
+             display: flex;
+             list-style: none;
+             li
+             {
+                 margin-right: 10px;
+                 text-decoration: none;
+                 a
+                 {
+                     color: #FFFDD0;
+                     text-decoration: none;
+                 }
+                 &:hover
+                 {
+                     cursor: pointer;
+                 }
+             }
+         }
+     }
+ }
+
+ form {
+     background-color: #f2e6dc; /* Cream background for form */
+     border: 2px solid #dc143c; /* Crimson border */
+     border-radius: 10px;
+     padding: 20px;
+     width: 100%;
+     max-width: 400px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Headings */
+ h1 {
+     color: #dc143c; /* Crimson for heading */
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ /* Label styles */
+ label {
+     display: block;
+     font-weight: bold;
+     margin-bottom: 10px;
+     color: #2b2b2b;
+ }
+
+ /* Radio buttons and text */
+ input[type="radio"] {
+     margin-right: 10px;
+ }
+
+ .row {
+     margin-bottom: 20px;
+ }
+
+ /* Submit button */
+ button {
+     background-color: #dc143c; /* Crimson for the button */
+     color: #f2e6dc; /* Cream for the text */
+     border: none;
+     border-radius: 5px;
+     padding: 10px 20px;
+     cursor: pointer;
+     font-size: 16px;
+     width: 100%;
+ }
+
+ button:hover {
+     background-color: #a10f2d; /* Darker crimson on hover */
+ }
+
+ /* Result display */
+ #result {
+     margin-top: 20px;
+     text-align: center;
+     font-size: 18px;
+     color: #dc143c;
+     font-weight: bold;
+ }
