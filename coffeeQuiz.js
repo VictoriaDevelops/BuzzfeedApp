@@ -39,16 +39,32 @@ function calculateCafeResult() {
         }
     }
 
-    // Display the result
-    document.getElementById("result").innerText = `The cafe for you is: ${formatCafeName(selectedCafe)}`;
+    // Define URLs for each cafe
+    const cafeLinks = {
+        betterBuzz: "https://betterbuzzcoffee.com/?srsltid=AfmBOoo_H59r0R89jta2XaUN0Bd_CwKqKULD_jS9pmRbbHYrTiB8WTbf",
+        keepCoffee: "https://www.instagram.com/thekeepcoffee/?hl=en",
+        meetFresh: "https://meetfresh.us/",
+        lovesong: "https://www.lovesongcoffee.com/"
+    };
+
+    // Display the result with a link to the cafe
+    const resultDiv = document.getElementById("result");
+    if (selectedCafe in cafeLinks) {
+        resultDiv.innerHTML = `
+            <p>The cafe for you is: <strong>${formatCafeName(selectedCafe)}</strong></p>
+            <a href="${cafeLinks[selectedCafe]}" target="_blank" style="color: #dc143c; text-decoration: none; font-weight: bold;">Visit their website</a>
+        `;
+    } else {
+        resultDiv.innerHTML = "Sorry, we couldn't determine a cafe for you.";
+    }
 }
 
 // Helper function to format cafe names
 function formatCafeName(cafe) {
     switch (cafe) {
-        case 'betterBuzz': return 'Better Buzz La Jolla';
+        case 'betterBuzz': return 'Better Buzz Coffee';
         case 'keepCoffee': return 'Keep Coffee';
-        case 'meetFresh': return 'MeetFresh Mira Mesa';
+        case 'meetFresh': return 'MeetFresh';
         case 'lovesong': return 'Lovesong Coffee + Market';
         default: return 'Unknown Cafe';
     }

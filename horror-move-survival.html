@@ -1,54 +1,56 @@
+<link rel="stylesheet" href="horror.css">
+
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
- </head>
- <body>
-     <nav>
-         <ul>
-             <li><a href="./index.html">Home</a></li>
-             <li><a href="./quizzes.html">Quizzes</a></li>
-         </ul>
-     </nav>
-     <h1>Which Horror Movie Would You Survive, and Which Would Kill You?</h1>
-     <form id="horrorMovieQuiz">
-         <!-- Question 1 -->
-         <div class="row">
-             <label for="q1">How would you react if you heard a noise in the middle of the night?</label><br>
-             <input type="radio" name="q1" value="scream-getout" id="q1-1"> Grab a weapon and investigate<br>
-             <input type="radio" name="q1" value="alien-theRing" id="q1-2"> Lock the door and hide<br>
-             <input type="radio" name="q1" value="cabininthewoods-paranormalActivity" id="q1-3"> Call a friend for help<br>
-             <input type="radio" name="q1" value="quietPlace-saw" id="q1-4"> Go back to sleep and ignore it<br>
-         </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./quizzes.html">Quizzes</a></li>
+        </ul>
+    </nav>
+    <h1>What Book Should You Read?</h1>
+    <form id="horrorMovieQuiz">
+        <!-- Question 1 -->
+        <div class="row">
+            <label for="q1">What genre do you want to read?</label><br>
+            <input type="radio" name="q1" value="poppyWar-achilles-martian-crows" id="q1-1"> Fantasy and Sci Fi<br>
+            <input type="radio" name="q1" value="anthropocene-momDied-bornCrime-maus" id="q1-2"> Non-Fiction<br>
+            <input type="radio" name="q1" value="blueSis-ttt-secretHis-myRage" id="q1-3"> Literature<br>
+            <input type="radio" name="q1" value="TIHYLTTW-royalGame-knownMen-galatea" id="q1-4"> Short Story<br>
+        </div>
 
-         <!-- Question 2 -->
-         <div class="row">
-             <label for="q2">What’s your weapon of choice in a horror scenario?</label><br>
-             <input type="radio" name="q2" value="scream-nightmareElm" id="q2-1"> A knife<br>
-             <input type="radio" name="q2" value="alien-halloween" id="q2-2"> A gun<br>
-             <input type="radio" name="q2" value="cabininthewoods-itFollows" id="q2-3"> A clever trap<br>
-             <input type="radio" name="q2" value="quietPlace-blairWitch" id="q2-4"> Just my wits<br>
-         </div>
+        <!-- Question 2 -->
+        <div class="row">
+            <label for="q2">How do you want to feel after reading the book?</label><br>
+            <input type="radio" name="q2" value="martian-anthropocene-ttt-TIHYLTTW" id="q2-1"> Happy<br>
+            <input type="radio" name="q2" value="achilles-maus-myRage-royalGame" id="q2-2"> Sad<br>
+            <input type="radio" name="q2" value="crows-momDied-secretHis-galatea" id="q2-3"> Bittersweet<br>
+            <input type="radio" name="q2" value="poppyWar-bornCrime-secretHis-knownMen" id="q2-4"> Confused<br>
+        </div>
 
-         <!-- Question 3 -->
-         <div class="row">
-             <label for="q3">Where would you feel safest during a horror movie situation?</label><br>
-             <input type="radio" name="q3" value="scream-theRing" id="q3-1"> In a crowded place<br>
-             <input type="radio" name="q3" value="alien-saw" id="q3-2"> In a remote cabin<br>
-             <input type="radio" name="q3" value="cabininthewoods-paranormalActivity" id="q3-3"> With a group of friends<br>
-             <input type="radio" name="q3" value="quietPlace-halloween" id="q3-4"> Somewhere totally silent<br>
-         </div>
+        <!-- Question 3 -->
+        <div class="row">
+            <label for="q3">Which figure do you admire?</label><br>
+            <input type="radio" name="q3" value="martian-anthropocene-secretHis-royalGame" id="q3-1"> Sherlock Holmes<br>
+            <input type="radio" name="q3" value="crows-bornCrime-blueSis-knownMen" id="q3-2"> Katniss Everdeen<br>
+            <input type="radio" name="q3" value="achilles-momDied-ttt-galatea" id="q3-3"> Percy Jackson<br>
+            <input type="radio" name="q3" value="poppyWar-maus-myRage-TIHYLTTW" id="q3-4"> Azula from ATLA<br>
+        </div>
 
-         <!-- Submit button -->
-         <button type="button" onclick="calculateHorrorResult()">Submit</button>
-     </form>
+        <!-- Submit button -->
+        <button type="button" onclick="calculateHorrorResult()">Submit</button>
+    </form>
 
-     <!-- Placeholder for the result -->
-     <div id="result"></div>
+    <!-- Placeholder for the result -->
+    <div id="result"></div>
 
-     <!-- Linking the JS file -->
-     <script src="horrorQuiz.js"></script>
- </body>
- </html> 
+    <!-- Linking the JS file -->
+    <script src="horrorQuiz.js"></script>
+</body>
+</html>

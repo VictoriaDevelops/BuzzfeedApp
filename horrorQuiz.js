@@ -2,23 +2,30 @@ function calculateHorrorResult() {
     // Get the form data
     const form = document.getElementById("horrorMovieQuiz");
 
-    // Initialize objects to track survival and death results
-    const survivalResults = {
-        scream: 0,
-        alien: 0,
-        cabininthewoods: 0,
-        quietPlace: 0
-    };
+    const booksResults = {
+        // Fantasy
+        poppyWar: 0, 
+        achilles: 0, 
+        martian: 0,    
+        crows: 0,       
+    
+        // Non fic 
+        anthropocene: 0,    
+        momDied: 0,         
+        bornCrime: 0,      
+        maus: 0,      
 
-    const deathResults = {
-        getout: 0,
-        theRing: 0,
-        paranormalActivity: 0,
-        saw: 0,
-        nightmareElm: 0,
-        halloween: 0,
-        itFollows: 0,
-        blairWitch: 0
+        // Lit 
+        blueSis: 0,  
+        ttt: 0,         
+        secretHis: 0,   
+        myRage: 0, 
+
+        // Short Stories  
+        TIHYLTTW: 0,        
+        royalGame: 0,       
+        knownMen: 0,      
+        galatea: 0,       
     };
 
     // Process answers for each question
@@ -26,57 +33,68 @@ function calculateHorrorResult() {
     const q2 = form.elements['q2'].value;
     const q3 = form.elements['q3'].value;
 
-    // Define a function to update the result counts
-    function processAnswer(answer, survivalMap, deathMap) {
-        const [survive, die] = answer.split('-');
-        survivalMap[survive]++;
-        deathMap[die]++;
+    function processAnswer(answer, bookMap) {
+        const [book1, book2, book3, book4] = answer.split('-');
+        bookMap[book1]++;
+        bookMap[book2]++;
+        bookMap[book3]++;
+        bookMap[book4]++;
+    }
+
+    function processAnswer1(answer, bookMap) {
+        const [book1, book2, book3, book4] = answer.split('-');
+        bookMap[book1]++;
+        bookMap[book1]++;
+        bookMap[book2]++;
+        bookMap[book2]++;
+        bookMap[book3]++;
+        bookMap[book3]++;
+        bookMap[book4]++;
+        bookMap[book4]++;
     }
 
     // Update the survival and death results
-    processAnswer(q1, survivalResults, deathResults);
-    processAnswer(q2, survivalResults, deathResults);
-    processAnswer(q3, survivalResults, deathResults);
+    processAnswer1(q1, booksResults);
+    processAnswer(q2, booksResults);
+    processAnswer(q3, booksResults);
 
     // Determine the movie with the highest survival score
-    let survivalMovie = "";
-    let maxSurvivalScore = 0;
-    for (const [movie, score] of Object.entries(survivalResults)) {
-        if (score > maxSurvivalScore) {
-            maxSurvivalScore = score;
-            survivalMovie = movie;
+    let selectedBook = "";
+    let maxScore = 0;
+    for (const [book, score] of Object.entries(booksResults)) {
+        if (score > maxScore) {
+            maxScore = score;
+            selectedBook = book;
         }
     }
 
-    // Determine the movie with the highest death score
-    let deathMovie = "";
-    let maxDeathScore = 0;
-    for (const [movie, score] of Object.entries(deathResults)) {
-        if (score > maxDeathScore) {
-            maxDeathScore = score;
-            deathMovie = movie;
-        }
-    }
-
-    // Display the result (survival and death movies)
-    document.getElementById("result").innerText = `You would survive in: ${formatMovie(survivalMovie)}\nYou would die in: ${formatMovie(deathMovie)}`;
+    // Display the result
+    document.getElementById("result").innerText = `You should read: ${formatBook(selectedBook)}`;
 }
 
-// Helper function to format movie names
-function formatMovie(movie) {
-    switch (movie) {
-        case 'scream': return 'Scream';
-        case 'alien': return 'Alien';
-        case 'cabininthewoods': return 'Cabin in the Woods';
-        case 'quietPlace': return 'A Quiet Place';
-        case 'getout': return 'Get Out';
-        case 'theRing': return 'The Ring';
-        case 'paranormalActivity': return 'Paranormal Activity';
-        case 'saw': return 'Saw';
-        case 'nightmareElm': return 'A Nightmare on Elm Street';
-        case 'halloween': return 'Halloween';
-        case 'itFollows': return 'It Follows';
-        case 'blairWitch': return 'The Blair Witch Project';
+// Helper function to format book names
+function formatBook(book) {
+    switch (book) {
+        case 'poppyWar': return 'The Poppy War';
+        case 'achilles': return 'The Song of Achilles';
+        case 'martian': return 'The Martian';
+        case 'crows': return 'Six of Crows';
+
+        case 'anthropocene': return 'The Anthropocene Reviewed';
+        case 'momDied': return 'I\'m Glad My Mom Died';
+        case 'bornCrime': return 'Born A Crime';
+        case 'maus': return 'Maus';
+
+        case 'blueSis': return 'Blue Sisters';
+        case 'ttt': return 'Tommorrow and Tomorrow and Tomorrow';
+        case 'secretHis': return 'The Secret History';
+        case 'myRage': return 'My Rage';
+
+        case 'TIHYLTTW': return 'This is How You Lose the Time War';
+        case 'royalGame': return 'The Royal Game';
+        case 'knownMen': return 'I Who Have Never Known Men';
+        case 'galatea': return 'Galatea';
+
         default: return 'Unknown';
     }
 }
