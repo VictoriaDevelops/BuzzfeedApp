@@ -6,57 +6,85 @@
     <title>Where Should You Travel? Quiz</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        .question {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .options {
-            list-style-type: none;
-            padding: 0;
-        }
-        .options li {
-            margin: 10px 0;
-        }
-        .options input {
-            margin-right: 10px;
-        }
-        #result {
-            font-size: 24px;
-            color: #333;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fef6e4; /* Light pastel cream */
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff1e6; /* Soft pastel peach */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 3px solid #ffc5bf; /* Soft pastel coral */
+}
+
+h1 {
+    color: #ffaaa7; /* Light pastel coral */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.question {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #6a7ba2; /* Muted pastel blue-gray */
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.options li {
+    margin: 10px 0;
+}
+
+.options input {
+    margin-right: 10px;
+    accent-color: #d4a5a5; /* Light pastel pink */
+}
+
+#result {
+    font-size: 24px;
+    color: #8ecae6; /* Soft pastel blue */
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #90e0ef; /* Soft pastel blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #68c2d8; /* Darker pastel blue */
+}
+
+button:active {
+    background-color: #50a2b5; /* Even darker pastel blue */
+}
+
+.container {
+    transition: transform 0.2s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
     </style>
 </head>
 <body>
