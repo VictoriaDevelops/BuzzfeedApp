@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take this fun quiz to find out what type of music listener you are!">
     <title>Fun Quiz</title>
     <style>
-       
         body {
             background-color: #E6E6FA; /* Light purple */
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -36,21 +36,46 @@
             font-weight: bold;
         }
 
-        /* Disco ball styling */
+        /* General Disco Ball Styling */
         .disco-ball {
-            width: 80px;
-            height: 80px;
+            width: 25px; /* Size of the disco ball */
+            height: 25px; /* Size of the disco ball */
             background: radial-gradient(circle at center, #fff 10%, #ccc 20%, #eee 40%);
             border-radius: 50%;
-            position: fixed;
-            top: 10%;
-            animation: spin 3s linear infinite;
+            position: fixed; /* Fixed positioning to place in viewport corners */
+            animation: spin 3s linear infinite; /* Makes the balls spin */
             box-shadow: 
-                0 0 8px rgba(255, 255, 255, 0.8),
+                0 0 8px rgba(167, 137, 219, 0.8),
                 0 0 12px rgba(255, 255, 255, 0.6),
                 0 0 16px rgba(255, 255, 255, 0.4);
+            z-index: 1; /* Ensure it appears above the background but below the content */
         }
 
+        /* Top-left corner */
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Top-right corner */
+        .top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Bottom-left corner */
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        /* Bottom-right corner */
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* Spinning Animation */
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -67,6 +92,7 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(255, 0, 255, 0.4), 0 0 25px rgba(0, 0, 255, 0.3);
             max-width: 600px;
+            width: 90%;
             text-align: center;
             margin-top: 20px;
         }
@@ -105,11 +131,19 @@
             font-weight: bold;
             color: #4B0082; /* Dark purple */
         }
+
+        /* Add cursor pointer for inputs */
+        input[type="radio"] + label {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <!-- Disco ball effect -->
-    <div class="disco-ball"></div>
+    <!-- Disco balls in all four corners -->
+    <div class="disco-ball top-left"></div>
+    <div class="disco-ball top-right"></div>
+    <div class="disco-ball bottom-left"></div>
+    <div class="disco-ball bottom-right"></div>
 
     <!-- Navigation bar -->
     <nav>
@@ -120,29 +154,62 @@
     </nav>
 
     <!-- Quiz content -->
-    <h1>What Type of Music Listener Are You?</h1>
-    <div class="quiz-container">
-        <form id="musicQuiz">
-            <!-- Question 1 -->
-            <div class="row">
-                <label for="q1">What kind of music do you listen to the most?</label><br>
-                <input type="radio" name="q1" value="pop" id="q1-pop"> Pop<br>
-                <input type="radio" name="q1" value="classical" id="q1-classical"> Rock<br>
-                <input type="radio" name="q1" value="rap" id="q1-rap"> Rap<br>
-                <input type="radio" name="q1" value="house" id="q1-house"> House<br>
-            </div>
+    <main>
+        <h1>What Type of Music Listener Are You?</h1>
+        <div class="quiz-container">
+            <form id="musicQuiz">
+                <!-- Question 1 -->
+                <div class="row">
+                    <label for="q1">What kind of music do you listen to the most?</label><br>
+                    <label>
+                        <input type="radio" name="q1" value="pop" id="q1-pop"> Pop
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" value="classical" id="q1-classical"> Rock
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" value="rap" id="q1-rap"> Rap
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" value="house" id="q1-house"> House
+                    </label>
+                </div>
 
-            <!-- Question 2 -->
-            <div class="row">
-                <label for="q2">Which of these artists do you prefer?</label><br>
-                <input type="radio" name="q2" value="pop" id="q2-pop"> Lana Del Rey<br>
-                <input type="radio" name="q2" value="classical" id="q2-classical"> Beethoven<br>
-                <input type="radio" name="q2" value="rap" id="q2-rap"> Tyler the Creator<br>
-                <input type="radio" name="q2" value="house" id="q2-house"> Dom Dolla<br>
-                
+                <!-- Question 2 -->
+                <div class="row">
+                    <label for="q2">Which of these artists do you prefer?</label><br>
+                    <label>
+                        <input type="radio" name="q2" value="pop" id="q2-pop"> Lana Del Rey
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" value="classical" id="q2-classical"> Beethoven
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" value="rap" id="q2-rap"> Tyler the Creator
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" value="house" id="q2-house"> Dom Dolla
+                    </label>
+                </div>
 
-            </div>
+                <!-- Question 3 -->
+                <div class="row">
+                    <label for="q3">What do you usually listen to while working or studying?</label><br>
+                    <label>
+                        <input type="radio" name="q3" value="pop" id="q3-pop"> Top 40 Indie Hits
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" value="classical" id="q3-classical"> Instrumental Classical
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" value="rap" id="q3-rap"> Rap Radar
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" value="house" id="q3-house"> Study House Beats
+                    </label>
+                </div>
 
+<<<<<<< Updated upstream
             <!-- Question 3 -->
             <div class="row">
                 <label for="q3">What do you usually listen to while working or studying?</label><br>
@@ -170,7 +237,15 @@
     </div>
     <!-- Linking the JS file -->
     <script src="musicQuiz.js"></script>
+=======
+                <!-- Submit button -->
+                <button type="button" onclick="calculateResult()">Submit</button>
+            </form>
+>>>>>>> Stashed changes
 
+            <!-- Placeholder for the result -->
+            <div id="result"></div>
+        </div>
+    </main>
 </body>
-
 </html>
